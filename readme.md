@@ -67,6 +67,18 @@ Note that while there are several others ways to accomplish this exercise, you m
 
 ## Exercise 2
 
+Make a copy of the program of **Exercise 1**, and name it **ex2.c**. Modify the program so that it outputs the line entered by the user in the **reverse order** of characters. Then, if the line is a _palindrome_, i.e., it reads the same forward and reverse, your program should also indicate that.
+
+Specifically, your program should display, **"Your input in reverse is:"** (with newline), and the reversed input on the next line. And if the line were a palindrome, it should also print, **"Found a palindrome!"** (with newline).
+
+**NOTE:** For this exercise, we will use a very strict definition of palindrome: _A string is a palindrome if and only if it reads exactly the same backward as forward, including spaces and punctuation._ Thus, for this exercise, **"madam"** is a palindrome, but **"Madam"** is **not**. Also, **"nurses, run"** is not a palindrome, but **"nursesrun"** is. We will use this highly restrictive definition for now just to make coding easier.
+
+Compile and run the program on a few inputs of your choice. Also, run it on the sample inputs provided and check that the output is correct (i.e., _identical_ to the output provided, no extra white space anywhere).
+
+----------------------------------------------------------------------
+
+## Exercise 3
+
 Make a copy of the program of **Exercise 2**, and name it **ex3.c**. We are now going to relax the rules for what constitutes a palindrome: **spaces and punctuation are to be ignored**, and two letters are considered to match **even if one is uppercase and the other is lowercase**. As an example, the input **"Race car"** should now be considered a palindrome, and **"Nurses, run!"** should as well. Assume that the input will only consist of letters, spaces, punctuation, and **one newline at the end.**
 
 Tip: The C library includes several functions that will be helpful here. The functions **isspace()** and **ispunct()** can tell if a character is a white space or a punctuation, respectively. The function **isalpha()** checks if a given character is an alphabetic letter. The functions **tolower()** and **toupper()** help convert a given character to its lowercase or uppercase equivalent, respectively. [Here](http://www.cplusplus.com/reference/cctype/) is a good reference for all of these functions. To use these functions, please include the following line near the top of the program, where other header files such as **stdio.h** are included:
