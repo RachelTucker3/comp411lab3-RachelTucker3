@@ -10,7 +10,7 @@ Prior to beginning this tutorial, carefully review the following material from t
 
 **Declaring strings in C:** Unlike other high-level languages that explicitly provide support for strings (e.g., the String class in Java), there is no built-in type for strings in C. Instead, strings are handled as arrays of characters. Here are some ways of declaring strings in C:
 
-```
+``` C
         char String1[10];               // an uninitialized stringof up to 10 characters
 
         char String2[10] = "Hello";     // a string with space for 10 characters, initialized to "Hello"
@@ -28,7 +28,9 @@ Each string is terminated using a special character called the **"NULL"** charac
 
 The NULL character is automatically appended by the compiler when the following declaration is used:
 
-`        char String2[10] = "Hello";     // a string with space for 10 characters, initialized to "Hello"`
+``` C
+char String2[10] = "Hello";     // a string with space for 10 characters, initialized to "Hello"
+```
 
 With this type of declaration, the use of double quotes ("Hello") explicitly indicates that a string is intended and, therefore, the compiler automatically appends a NULL character, making it equivalent to the character array: `{ 'H', 'e', 'l', 'l', 'o', '\0'}`
 
@@ -38,7 +40,7 @@ When declaring strings, be careful to count the space that will be needed by the
 
 All C library routines for reading and writing strings --- **scanf()**, **printf()**, and others we will soon learn --- always append the terminator at the end of any new string created or updated. However, if you are manually creating a new string and copying individual characters into it, it is your responsibility to append a terminator at the end. For example:
 
-```
+``` C
         char String2[10] = "Hello";     // a string with space for 10 characters, initialized to "Hello"
         ...
         ...
@@ -53,7 +55,7 @@ The above code fragment turns String2 into `{ 'H', 'e', '\0', 'l', 'o', '\0', '#
 
 Compile and run the program **analyze.c**. Modify the program to replace the loop containing repeated **getchar()** calls with a single call to **fgets()**. Please first review **P&M Chapter 6** in its entirety for basics on strings. Also review **P&M pp. 235-236** for details on the **fgets()** function, but here is a quick tip on its usage:
 
-Function signature: `fgets(text, MAX, stdin)`;
+**Function signature:** `fgets(text, MAX, stdin)`;
 
 **fgets** stands for _"get string from file"_, and it stores the string read into the **text** argument, reading up to a maximum number of **MAX** characters, from the file specified in the third argument, which in our case is the "_standard input_" or **stdin** (meaning keyboard, or a file if input is redirected using **"<"**).
 
@@ -83,7 +85,9 @@ Make a copy of the program of **Exercise 2**, and name it **ex3.c**. We are now 
 
 Tip: The C library includes several functions that will be helpful here. The functions **isspace()** and **ispunct()** can tell if a character is a white space or a punctuation, respectively. The function **isalpha()** checks if a given character is an alphabetic letter. The functions **tolower()** and **toupper()** help convert a given character to its lowercase or uppercase equivalent, respectively. [Here](http://www.cplusplus.com/reference/cctype/) is a good reference for all of these functions. To use these functions, please include the following line near the top of the program, where other header files such as **stdio.h** are included:
 
-`#include <ctype.h>`
+``` C
+#include <ctype.h>
+```
 
 As in Exercise 2, your program should first display, **"Your input in reverse is:"**, and the reversed input on the next line. And if the line were a palindrome according to the relaxed rules of this exercise, it should also print, **"Found a palindrome!"**.
 
