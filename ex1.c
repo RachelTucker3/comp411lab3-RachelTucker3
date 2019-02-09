@@ -16,8 +16,8 @@ int main()
   
   /* Save typed characters in text[]: */
     
-  text[i] = fgets( i, MAX, stdin);
-  length = strlen(text);
+  fgets( text, MAX, stdin);
+  length = strlen(text) - 1;
   
   /* Analyse contents of text[]: */
     
