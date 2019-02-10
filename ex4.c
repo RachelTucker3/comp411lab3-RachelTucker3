@@ -4,7 +4,7 @@
 
 int main()
 {
-  int A[3][3];    // matrix A     
+  int A[3][3];    // matrix A
   int B[3][3];    // matrix B
   int C[3][3];    // matrix to store their sum
 
